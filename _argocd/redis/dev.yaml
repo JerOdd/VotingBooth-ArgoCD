@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: redis-dev
+spec:
+  project: votingbooth
+  source:
+    repoURL: https://github.com/JerOdd/VotingBooth-ArgoCD.git
+    targetRevision: master
+    path: ./redis/dev
+    helm:
+      valueFiles:
+        - ./config.yaml
+
+  destination:
+    name: https://kubernetes.default.svc
+    namespace: votingbooth-dev
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

@@ -1,0 +1,23 @@
+redis:
+  fullnameOverride: redis
+  namespaceOverride: votingbooth-dev
+  auth:
+    enable: true
+    usePassword: true
+    usePasswordFile: true
+    existingSecret: redis-password-secret
+  architecture: standalone
+  global:
+    defaultStorageClass: csi-cinder-classic
+  primary:
+    resources:
+      requests:
+        cpu: 100m
+        memory: 50Mi
+      limits:
+        cpu: 100m
+        memory: 50Mi
+  replica:
+    replicaCount: 1
+  readReplicas:
+    replicaCount: 0

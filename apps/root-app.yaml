@@ -4,6 +4,7 @@ metadata:
   name: root-apps
   namespace: argocd
 spec:
+  project: default
   source:
     repoURL: https://github.com/JerOdd/VotingBooth-ArgoCD
     targetRevision: HEAD

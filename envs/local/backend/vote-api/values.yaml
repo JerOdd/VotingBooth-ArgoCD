@@ -1,0 +1,8 @@
+namespace: "votingbooth-local"
+deployment:
+  image:
+    repository: "vote-api"
+    tag: "latest"
+  envs:
+    - REDIS_HOST: "localhost"
+    - REDIS_PORT: "6379"

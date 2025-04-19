@@ -6,19 +6,12 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/JerOdd/VotingBooth-Helm
-    targetRevision: main
+    repoURL: https://jerodd.github.io/VotingBooth-Helm
+    targetRevision: 0.1.0
     chart: vote-api
     helm:
-      values: |
-        namespace: "votingbooth-local"
-        deployment:
-          image:
-            repository: "vote-api"
-            tag: "latest"
-          envs:
-            - REDIS_HOST: "localhost"
-            - REDIS_PORT: "6379"
+      valueFiles:
+        - values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: votingbooth-local

@@ -7,8 +7,8 @@ spec:
   project: default
   source:
     repoURL: https://jerodd.github.io/VotingBooth-Helm
-    targetRevision: 0.1.0
     chart: vote-api
+    targetRevision: 0.1.0
     helm:
       valueFiles:
         - values.yaml

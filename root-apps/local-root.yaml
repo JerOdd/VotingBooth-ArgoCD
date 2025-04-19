@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: root-apps
+  name: local-root
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/JerOdd/VotingBooth-ArgoCD
     targetRevision: HEAD
-    path: root-apps 
+    path: envs/local 
     directory:
       recurse: true
   destination:
@@ -16,4 +16,5 @@ spec:
     namespace: argocd
   syncPolicy:
     automated:
+      prune: true
       selfHeal: true

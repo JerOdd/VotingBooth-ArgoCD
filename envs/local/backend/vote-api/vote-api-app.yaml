@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/JerOdd/VotingBooth-Helm.git
     targetRevision: HEAD
-    path: vote-api
+    path: charts/vote-api
     helm:
       valueFiles:
         - values.yaml

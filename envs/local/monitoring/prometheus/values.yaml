@@ -1,22 +1,9 @@
-server:
-  global:
-    scrape_interval: 15s
-  resources:
-    limits:
-      cpu: 200m
-      memory: 512Mi
-    requests:
-      cpu: 100m
-      memory: 256Mi
-
-alertmanager:
-  enabled: true
-
-pushgateway:
-  enabled: false
-
-# Optional service config
-service:
-  type: ClusterIP
-
-# Add ingress, persistence, etc., as needed
+grafana:
+  adminPassword: admin
+  service:
+    type: NodePort
+  ingress:
+    enabled: false
+prometheus:
+  service:
+    type: NodePort

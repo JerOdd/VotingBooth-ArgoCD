@@ -1,33 +1,33 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: vote-api
-#   namespace: argocd
-# spec:
-#   project: default
-#   source:
-#     repoURL: https://jerodd.github.io/VotingBooth-Helm
-#     chart: votingbooth-helm
-#     targetRevision: 0.1.0
-#     helm:
-#       values: |
-#         name: "vote-api"
-#         namespace: "votingbooth-local"
-#         deployment:
-#           image:
-#             repository: "vote-api"
-#             tag: "latest"
-#           imagePullPolicy: "Never"
-#           envs:
-#             REDIS_HOST: "localhost"
-#             REDIS_PORT: "6379"
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vote-api
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://jerodd.github.io/VotingBooth-Helm
+    chart: votingbooth-helm
+    targetRevision: 0.1.0
+    helm:
+      values: |
+        name: "vote-api"
+        namespace: "votingbooth-local"
+        deployment:
+          image:
+            repository: "vote-api"
+            tag: "latest"
+          imagePullPolicy: "Never"
+          envs:
+            REDIS_HOST: "localhost"
+            REDIS_PORT: "6379"
 
-#   destination:
-#     server: https://kubernetes.default.svc
-#     namespace: votingbooth-local
-#   syncPolicy:
-#     automated:
-#       prune: true
-#       selfHeal: true
-#     syncOptions:
-#       - CreateNamespace=true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: votingbooth-local
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

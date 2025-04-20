@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://jerodd.github.io/VotingBooth-Helm
-    chart: vote-api
+    chart: votingbooth-helm
     targetRevision: 0.1.0
     helm:
       valueFiles:

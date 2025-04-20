@@ -7,8 +7,8 @@ spec:
   project: default
   source:
     repoURL: https://github.com/JerOdd/VotingBooth-Helm.git
-    path: .
-    targetRevision: HEAD
+    chart: votingbooth-helm
+    targetRevision: 0.1.0
     helm:
       values: |
         name: "vote-api"

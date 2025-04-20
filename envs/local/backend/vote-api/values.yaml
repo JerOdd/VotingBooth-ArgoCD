@@ -5,5 +5,5 @@ deployment:
     repository: "vote-api"
     tag: "latest"
   envs:
-    - REDIS_HOST: "localhost"
-    - REDIS_PORT: "6379"
+    REDIS_HOST: "localhost"
+    REDIS_PORT: "6379"

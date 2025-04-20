@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/JerOdd/VotingBooth-Helm
+    repoURL: https://github.com/JerOdd/VotingBooth-Helm.git
     path: .
-    targetRevision: main
+    targetRevision: HEAD
     helm:
       valueFiles:
         - values.yaml

@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/jerodd/VotingBooth-Helm
+    repoURL: https://github.com/JerOdd/VotingBooth-Helm
     path: .
     targetRevision: main
     helm:

@@ -10,17 +10,8 @@ spec:
     chart: votingbooth-helm
     targetRevision: 0.1.0
     helm:
-      values: |
-        name: "vote-api"
-        namespace: "votingbooth-local"
-        deployment:
-          image:
-            repository: "vote-api"
-            tag: "latest"
-          imagePullPolicy: "Never"
-          envs:
-            REDIS_HOST: "localhost"
-            REDIS_PORT: "6379"
+      valueFiles:
+        - values.yaml
 
   destination:
     server: https://kubernetes.default.svc
@@ -31,3 +22,4 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+      

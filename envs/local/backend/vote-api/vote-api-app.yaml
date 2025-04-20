@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/JerOdd/VotingBooth-Helm.git
+    repoURL: https://jerodd.github.io/VotingBooth-Helm
     chart: votingbooth-helm
     targetRevision: 0.1.0
     helm:

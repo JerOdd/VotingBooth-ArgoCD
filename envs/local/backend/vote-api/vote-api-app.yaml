@@ -11,7 +11,7 @@ spec:
     targetRevision: 0.1.0
     helm:
       valueFiles:
-        - values.yaml
+        - values-local.yaml
 
   destination:
     server: https://kubernetes.default.svc
@@ -22,4 +22,3 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
-      

@@ -10,8 +10,18 @@ spec:
     path: .
     targetRevision: HEAD
     helm:
-      valuesFiles:
-        - values.yaml
+      values: |
+        name: "vote-api"
+        namespace: "votingbooth-local"
+        deployment:
+          image:
+            repository: "vote-api"
+            tag: "latest"
+          imagePullPolicy: "Never"
+          envs:
+            REDIS_HOST: "localhost"
+            REDIS_PORT: "6379"
+
   destination:
     server: https://kubernetes.default.svc
     namespace: votingbooth-local

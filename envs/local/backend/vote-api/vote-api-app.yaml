@@ -19,7 +19,7 @@ spec:
             tag: "latest"
           imagePullPolicy: "Never"
           envs:
-            REDIS_HOST: "localhost"
+            REDIS_HOST: "my-redis-master"
             REDIS_PORT: "6379"
 
   destination:

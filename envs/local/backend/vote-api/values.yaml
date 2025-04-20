@@ -4,6 +4,7 @@ deployment:
   image:
     repository: "vote-api"
     tag: "latest"
+  imagePullPolicy: "Never"
   envs:
     REDIS_HOST: "localhost"
     REDIS_PORT: "6379"

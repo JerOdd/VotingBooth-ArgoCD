@@ -10,15 +10,16 @@ spec:
     path: .
     targetRevision: HEAD
     helm:
-      parameters:
-        - name: name
-          value: vote-api
-        - name: namespace
-          value: votingbooth-local
-        - name: deployment.image.repository
-          value: vote-api
-        - name: deployment.image.tag
-          value: latest
+      values: |
+        name: "vote-api"
+        namespace: "votingbooth-local"
+        deployment:
+          image:
+            repository: "vote-api"
+            tag: "latest"
+          envs:
+            REDIS_HOST: "localhost"
+            REDIS_PORT: "6379"
   destination:
     server: https://kubernetes.default.svc
     namespace: votingbooth-local

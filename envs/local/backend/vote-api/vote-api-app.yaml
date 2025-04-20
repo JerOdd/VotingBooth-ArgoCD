@@ -10,8 +10,15 @@ spec:
     path: .
     targetRevision: HEAD
     helm:
-      valueFiles:
-        - values.yaml
+      parameters:
+        - name: name
+          value: vote-api
+        - name: namespace
+          value: votingbooth-local
+        - name: deployment.image.repository
+          value: vote-api
+        - name: deployment.image.tag
+          value: latest
   destination:
     server: https://kubernetes.default.svc
     namespace: votingbooth-local
